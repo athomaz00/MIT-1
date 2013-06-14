@@ -1,0 +1,43 @@
+\documentclass {article}
+\begin {document}
+\title {Limits and Continuity}
+\author {Joshua Cole}
+\date {June 13, 2013}
+\maketitle
+
+\section {Easy Limits}
+Some limits are easier to solve then others. Take for example the equation,
+
+$$\lim_{x \to 4} \frac {x+3} {x^2+1}$$
+
+Its numerator can never be zero and in the case of $x=4$ deducing the solution is trivial.
+
+\section {Derivatives Are Always Harder}
+The equation for a derivative of $f(x)$ is,
+
+$$f'(x)=\lim_{x \to x_0}\frac{f(x_0)-f(x)}{x_0-x}$$
+
+Unlike an easy limit this denominator is always zero, or at least close enough to it as to make little difference. Until the delta can be removed from the denominator we are stuck.
+
+
+\section {Left and Right Hand Limits}
+
+A left hand limit is written as,
+$$\lim_{x \to x_0^-}$$
+It means that $x$ is less than $x_0$. A right hand limit is written as,
+ $$\lim_{x \to x_0^+}$$
+It means that $x$ is greater than $x_0$.\\
+
+As an example of this lets consider the function,
+$$f(x)=\left\{
+\begin{array}{l l}
+x+1 \quad x >0\\ 
+-x+2 \quad x < 0
+\end{array}
+\right.$$
+
+When given a left-handed limit the equation would come out to $2$. However, with the right-handed limit the function would come out to $1$.
+
+\section {Continuity}
+A function is continuos at $f(x_0)$ if the $$\lim_{x \to x_0} f(x_0)-f(x)=0$$. This gives it nice properties like being the same on either side of the point as it approaches the delta.
+\end {document}
