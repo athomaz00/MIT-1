@@ -10,7 +10,7 @@ While going to community college I discovered that some of my teachers weren't a
 
 
 
-## What I Have Studies and What I Plan To Study
+## What I Have Studied and What I Plan To Study
 
 - Mathematics
 	- Statistics (In Progress)
