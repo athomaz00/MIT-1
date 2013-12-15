@@ -1,0 +1,58 @@
+\documentclass {article}
+\usepackage{amsmath}
+\begin {document}
+
+\title {Problem Set 5 Writeup}
+\author {Joshua Cole}
+\date {Dec 14, 2013}
+\maketitle
+\section {Exercises on transposes, permutations, spaces}
+
+\paragraph{Problem 5.1:}
+
+a) Find a 3 by 3 permutation matrix with $P^4 = I$ (but not $P = I$). b) Find a 4 by 4 permutation $P$ with $P^4= I$
+
+$$
+\begin{bmatrix}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0
+\end{bmatrix}
+$$
+
+
+\paragraph{Problem 5.2:} Suppose A is a four-by-four matrix. How many entries can be chosen indepently if A is symmetric? How about if A is skew-symmetric?
+
+Ten entries can be chosen if $A$ is symmetric and 6 entries can be chosen if $A$ is skew symmetric.
+
+\paragraph{Problem 5.3:} True or false (check addition or give a counterex­ample):
+
+a) The symmetric matrices in $M$ (with $A^T = A$) form a subspace.
+
+b) The skew-symmetric matrices in $M$ (with $A^T = −A$) form a subspace.
+
+c) The unsymmetric matrices in $M$ (with $A^T \ne A$) form a subspace.
+
+a) True. b) True. c) False due to 
+$$
+\begin{bmatrix}
+1 & 1 \\
+0 & 0 
+\end{bmatrix} +
+\begin{bmatrix}
+0 & 0 \\
+1 & 1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 1 \\
+1 & 1 
+\end{bmatrix}
+$$
+\end {document}
