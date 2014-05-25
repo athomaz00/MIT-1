@@ -1,0 +1,15 @@
+Joshua Cole
+
+Exercise 5.1
+
+1: Show that the assumption that we are always able to determine which canidate is best in line 4 of procedure HIRE-ASSISTANT implies that we know a total order on the ranks of the canidates.
+
+It is implicit that for any two canidates {c} we can know whether {c_1 > c_2}. This is true for every element in {c}. Thus, it would be possible to sort all the elements in {c}. A sort produces the order mentioned previously, so it is clear that we are able to infer a total order on the ranks of the {c}.
+
+2: Describe an implementation of the procedure {Random(a, b)} that only makes calls to {Random(0, 1)}. What is the expected running time of your procedure, as a function of {a} and {b}?
+
+Generate a number in base 2 between 0 and ceiling(lg(b-a)). Check to see if that number is between 0 and b-a. Try again if it is not. When a number is between b-a, return a + that number. The running time is going to be roughly:
+
+T(a, b) = lg(b-a) + Y * T(a, b)
+
+where Y is a random variable representing the chance that the generated number is in the space before the next power of two comes around.
