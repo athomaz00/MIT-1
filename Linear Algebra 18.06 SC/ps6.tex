@@ -1,0 +1,32 @@
+\documentclass {article}
+\usepackage{amsmath}
+\begin {document}
+
+\title {Problem Set 6 Writeup}
+\author {Joshua Cole}
+\date {Dec 22, 2013}
+\maketitle
+\section {Exercises on column space and null space}
+
+\paragraph{Problem 6.1:}
+
+Suppose $S$ and $T$ are two subspaces of a vector space $V$.
+
+a) The sum of $S+T$ contains all sums of $s+t$ of a vector $s$ in $S$ and of a vector $t$ in $T$. Show that $S+T$ satisfies the requirements of a vector space.
+
+b) if $S$ and $T$ are vectors in $R^m$, what is the difference between $S+T$ and $S \cup T$? Explain the statement that the span of $S \cup T$ is $S+T$.
+
+When I think about this problem I tend to think in terms of the geometry of the subspaces. Picture two planes, both of which are subspaces that go through the origin. If they are on top of each other then they are obviously closed under addition and multiplication. However, if they are not on top of each other then they span into the other dimensions filling up the space and making a new subspace. This can be expressed algebraically by:
+
+$$c(s+t) = cs + ct$$
+$$(s+s_1) + (t+t_1) = (s+t)+(s_1+t_1)$$
+
+As to the second problem the difference between $S+T$ and $S \cup T$ is simple. One fills up two subspaces while the other one spans the two subspaces to create a new subspace. If you think about the subspaces as a line the union of those lines is just two lines. However, all the linear combinations of those two lines would fill a plane.
+
+\paragraph{Problem 6.3:}
+
+How is the nullspace $N(C)$ related to the nullspaces of $A$ and $B$ if $C = [A;B]$.
+
+$$N(C)=N(A) \cap N(B)$$
+
+\end {document}
