@@ -1,0 +1,11 @@
+# make a thing cloner
+
+def clone(thing):
+	new_thing = Thing()
+	new_thing.set(thing.get())
+	return new_thing
+
+
+def string_thing(thing):
+	print "This is a thing with", thing.get(), "in it."
+Thing.__str__ = string_thing

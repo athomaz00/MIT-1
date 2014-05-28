@@ -1,0 +1,23 @@
+# write a procedure that takes in two things: thing1 and thing2 and puts the stored value
+# of thing 1 into thing 2
+
+def assign(thing1, thing2):
+	thing2.set(thing1.get())
+
+# Now do a swap
+def swap(thing1, thing2):
+	temp = thing1.get()
+	thing1.set(thing2.get())
+	thing2.set(temp)
+
+# Now sum two things and put that in a thing
+def sum(thing1, thing2):
+	thing = Thing()
+	thing.set(thing1.get() + thing2.get())
+	return thing
+
+# Take in a list of things and output the sum of those things as a thing
+def sumOfThings(things):
+	thing = Thing()
+	thing.set(sum([x.get() for x in things]))
+	return thing

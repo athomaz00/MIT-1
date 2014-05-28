@@ -1,0 +1,19 @@
+# Define a procedure, called evenSquares that takes a list of numbers as input and returns
+# a list of the squares of the input values that are even. Use a list comprehension. You
+# can test whether a number is even by seeing if the number mod 2 is 0, that is,
+# x % 2 == 0
+
+def evenSquare(arr):
+	return [x for x in arr if x % 2 == 0]
+
+# Use a list comprehension to define a procedure, called sumAbsProd , that returns the sum
+# of the absolute values of the products of all the pairs of numbers where one is drawn
+# from each of the two input lists.
+# >>> sumAbsProd([2,-3],[4,-5])
+# 45
+# That is 2*4 + 2*5 + 3*4 + 3*5 = 45.
+# Use the sum and abs built-in functions in Python.
+
+def sumAbsProd(x_arr, y_arr):
+	return sum([abs(x * y) for x in x_arr for y in y_arr])
+

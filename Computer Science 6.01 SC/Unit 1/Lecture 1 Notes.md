@@ -16,4 +16,4 @@ PCAP is a framework to manage complexity.
 - primitives: +, *, ===, numbers, booleans, strings
 - combinations: if, while, square, lists, dictionaries, ojbects
 - abstractions: def, classes
-patterns: higher order functions, super-classes, sub-classes
+- patterns: higher order functions, super-classes, sub-classes

@@ -1,0 +1,74 @@
+class Thing:
+	def set(self, v):
+		self.x = v
+
+	def get(self):
+		return self.x
+
+
+a = Thing()
+a.x = 6
+a.get()
+# Returns an int, 6
+b = Thing()
+a.set(b)
+a.x
+# An instance of Thing, b
+b.set(7)
+a.x.x
+# An int, 7
+a.get()
+# An instance of Thing, b
+a.x.get()
+# An int, 7
+3 + a.get().get()
+# An int, 10
+c = a.get()
+# An instance of Thing, n
+a.set(1 - a.get().get())
+a.x
+# An int, -6
+c.set(3)
+a.get().get()
+# Nonetype, error
+a = Thing()
+b = Thing()
+a.set(b)
+b.set(a)
+a.x == b
+# boolean, true
+a.x.x == a
+# boolean, true
+a.x.x.x == b#
+# boolean, true
+
+def thingMangle(arg):
+	arg.set(arg.get() + 1)
+	arg.hasBeenMangled = True
+
+a = Thing()
+a.set(5)
+thingMangle(a)
+a.get()
+# an int, 6
+a.hasBeenMangled
+# a boolean, true
+b = Thing()
+b.set(Thing())
+b.get().set(3)
+thingMangle(b.get())
+b.get()
+# an instance of thing
+b.get().get()
+# an int, 4
+c = Thing()
+thingMangle(c)
+# Nonetype, an error
+
+Thing.thingMangle = thingMangle
+
+def mangled(z):
+	new_thing = Thing()
+	new_thing.set(z)
+	new_thing.thingMangle()
+	return new_thing
