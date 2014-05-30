@@ -1,0 +1,13 @@
+1. The best description of the machine is that it counts forwards and backwards mod 4. Zero is forawards, one is backwards, and two is a reset.
+
+2: 0, 1
+   0, 2
+   2, 0
+   0, 1
+   0, 2
+   0, 3
+   1, 2
+   1, 1
+   1, 0
+
+3. In order to get the string of outputs listed you could feed in: [1, 1, 2, 0, 0, 0]

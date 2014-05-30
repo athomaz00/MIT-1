@@ -1,0 +1,8 @@
+1: Q1 should be unlocked.
+2: Q2 should be enter.
+3: Q3 should be locked.
+4: Q4 should be pay.
+5: Q5 should be locked
+6: Q6 should be pay.
+7: Q7 should be unlocked.
+8: Q8 should be enter.
