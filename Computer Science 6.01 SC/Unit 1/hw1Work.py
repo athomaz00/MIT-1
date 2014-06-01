@@ -15,7 +15,14 @@ class BinaryOp:
     __repr__ = __str__
 
     def eval(self, env):
-        return self.op(self.left.eval(env), self.right.eval(env))
+        lhs = self.left.eval(env)
+        rhs = self.right.eval(env)
+        if isNum(lhs) and isNum(rhs):
+            return self.op(lhs, rhs)
+        else:
+            self.left = Number(lhs) if isNum(lhs) else lhs 
+            self.right = Number(rhs) if isNum(rhs) else rhs
+            return self
 
 class Sum(BinaryOp):
     opStr = 'Sum'
@@ -37,7 +44,7 @@ class Assign(BinaryOp):
     opStr = 'Assign'
 
     def eval(self, env):
-        env[self.left.name] = self.right.eval(env)
+        env[self.left.name] = self.right
         
 class Number:
     def __init__(self, val):
@@ -57,8 +64,10 @@ class Variable:
     __repr__ = __str__
 
     def eval(self, env):
-        return env[self.name]
-
+        if self.name in env:
+            return env[self.name].eval(env)
+        else:
+            return self
 # characters that are single-character tokens
 seps = ['(', ')', '+', '-', '*', '/', '=']
 
@@ -251,3 +260,6 @@ partialTestExprs = ['(z = (y + w))',
                     'z']
 
 # calcTest(partialTestExprs)
+
+# Note if you were to assign a to something then refrence a in its own definition...
+# there would be problems
