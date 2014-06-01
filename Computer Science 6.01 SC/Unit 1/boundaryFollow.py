@@ -5,14 +5,44 @@ import lib601.gfx as gfx
 from soar.io import io
 
 
+def wall_ahead(sonars):
+    return sonars[3] < 0.5 or sonars[4] < 0.5
+
+def right_wall_too_far(sonars):
+     return 0.3 < sonars[7]
+
+def right_wall_too_close(sonars):
+    return sonars[7] < 0.5
 
 class MySMClass(sm.SM):
     startState = "initialize"
-    desired = 1.0
 
     def getNextValues(self, state, inp):
-        distance = (inp.sonars[3] + inp.sonars[4]) / 2
-        return (state, io.Action(fvel=distance-self.desired, rvel=0))
+        if state == "initialize":
+            if not wall_ahead(inp.sonars):
+                fvel = 0.03
+                rvel = 0.0
+                return (state, io.Action(fvel=fvel, rvel=rvel))
+            else:
+                fvel = 0.0
+                rvel = 0.0
+                return ("follow", io.Action(fvel=fvel, rvel=rvel))
+        if state == "follow":
+            if wall_ahead(inp.sonars):
+                fvel = 0.0
+                rvel = 0.03
+                print "turning left", "cause wall ahead"
+                return ("follow", io.Action(fvel=fvel, rvel=rvel))
+            elif right_wall_too_close(inp.sonars):
+                fvel = 0.01
+                rvel = 0.03
+                print "turning left", "cause wall too close"
+                return ("follow", io.Action(fvel=fvel, rvel=rvel))
+            elif right_wall_too_far(inp.sonars):
+                fvel = 0.01
+                rvel = -0.03
+                print "turning right", "cause wall too far"
+                return ("follow", io.Action(fvel=fvel, rvel=rvel))
 
 
 
