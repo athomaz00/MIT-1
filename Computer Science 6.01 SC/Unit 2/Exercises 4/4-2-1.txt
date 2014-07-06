@@ -1,0 +1,11 @@
+1. The output at time n is the sum of its inputs up to and including time n.
+
+I can see multiple ways to express this. One way is c = zeros() d = ones(). A simpler way though is c = [1], d=[1]. This gives y[n] = y[n-1] + x[n].
+
+2. The output at time n is the sum of its inputs up to and including time n-1.
+
+I can again see multiple ways to express this. One way is c = zeroes() d = 0 followed by onmes(). A simpler way is c = [1], d = [0, 1]. This gives y[n] = y[n-1] + x[n-1].
+
+3. The output at time n is the sum of the scaled inputs up (scaling by 0.1) to and including time n-1.
+
+This is the same as the previous except in the d coeffs instead of using 1 we always use 0.1.
