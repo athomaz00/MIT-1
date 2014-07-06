@@ -21,6 +21,7 @@ While going to community college I discovered that some of my teachers weren't a
 	- Physics
 - Computer Science
 	- Introduction to Programming (Finished)
+	- Introduction to EE and CS (In Progress)
 	- Algorithms and Data Structures (In Progress)
-	- Machine Learning
+	- Machine Learning (In Progress)
 	- Artificial Intelligence
